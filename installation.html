@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Installation — Enterprise Private AI Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">
+    <span class="nav-brand-dot"></span>
+    EnterpriseAI
+  </a>
+  <div class="nav-links">
+    <a class="nav-btn"        href="index.html">Home</a>
+    <a class="nav-btn active" href="installation.html">Installation</a>
+    <a class="nav-btn"        href="about.html">About</a>
+    <button class="nav-download" onclick="triggerDownload()">&#8595; Download .exe</button>
+  </div>
+</nav>
+
+<div class="page-wrap">
+  <div class="page-hero">
+    <div class="container">
+      <div class="eyebrow">Setup Guide</div>
+      <h1>Installation Guide</h1>
+      <p>Enterprise Private AI Assistant runs fully on your local system to ensure maximum privacy and control. Follow the steps below to get set up.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="install-layout">
+
+      <!-- Sidebar TOC -->
+      <div class="toc">
+        <div class="toc-title">Contents</div>
+        <a class="toc-link active" href="#prereq"  onclick="scrollToSection('prereq', this)">Prerequisites</a>
+        <a class="toc-link"        href="#steps"   onclick="scrollToSection('steps', this)">Installation Steps</a>
+        <a class="toc-link"        href="#sysreq"  onclick="scrollToSection('sysreq', this)">System Requirements</a>
+        <a class="toc-link"        href="#notes"   onclick="scrollToSection('notes', this)">Notes</a>
+        <a class="toc-link"        href="#trouble" onclick="scrollToSection('trouble', this)">Troubleshooting</a>
+        <br/>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:0.5rem;" onclick="triggerDownload()">&#8595; Download .exe</button>
+      </div>
+
+      
+      <div>
+
+        <!-- Prerequisites -->
+        <div class="content-section" id="prereq">
+          <h3>Prerequisites</h3>
+          <p style="font-size:14px;color:var(--text2);margin-bottom:1.1rem;line-height:1.65;">Before installation, ensure the following are installed on your system.</p>
+          <div class="prereq-cards">
+            <div class="prereq-card">
+              <div class="prereq-name">Python</div>
+              <div class="prereq-desc">Required for the backend runtime.</div>
+              <a class="prereq-link" href="https://www.python.org/downloads/" target="_blank">&#8599; python.org/downloads</a>
+            </div>
+            <div class="prereq-card">
+              <div class="prereq-name">Docker Desktop</div>
+              <div class="prereq-desc">Required for Qdrant and Redis containers.</div>
+              <a class="prereq-link" href="https://www.docker.com/products/docker-desktop/" target="_blank">&#8599; docker.com/desktop</a>
+            </div>
+            <div class="prereq-card">
+              <div class="prereq-name">Ollama</div>
+              <div class="prereq-desc">Required for local LLM inference (Llama 3).</div>
+              <a class="prereq-link" href="https://ollama.com/download" target="_blank">&#8599; ollama.com/download</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Installation Steps -->
+        <div class="content-section" id="steps">
+          <h3>Installation Steps</h3>
+
+          <div class="step-block">
+            <div class="step-num">01</div>
+            <div>
+              <div class="step-title">Download the Package</div>
+              <div class="step-body">Download the Enterprise Private AI Assistant package.</div>
+              <div style="margin-top:0.75rem;">
+                <button class="btn btn-primary" style="font-size:12.5px;padding:0.5rem 1.1rem;" onclick="triggerDownload()">&#8595; Download Package</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-block">
+            <div class="step-num">02</div>
+            <div>
+              <div class="step-title">Extract the Archive</div>
+              <div class="step-body">Extract the downloaded ZIP archive to your preferred installation folder.</div>
+            </div>
+          </div>
+
+          <div class="step-block">
+            <div class="step-num">03</div>
+            <div>
+              <div class="step-title">Run the Setup Script</div>
+              <div class="step-body">Open the extracted folder and run the setup script. This automatically configures your environment.</div>
+              <div class="code-box">setup.bat</div>
+              <div class="step-pills">
+                <span class="step-pill">Creates virtual environment</span>
+                <span class="step-pill">Installs dependencies</span>
+                <span class="step-pill">Runs DB migrations</span>
+                <span class="step-pill">Pulls Llama 3 model</span>
+                <span class="step-pill">Creates Docker containers</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="step-block">
+            <div class="step-num">04</div>
+            <div>
+              <div class="step-title">Launch the Application</div>
+              <div class="step-body">Double-click the launcher. All services start automatically and the UI opens in your browser.</div>
+              <div class="code-box">EnterpriseAI.exe</div>
+              <div class="step-pills">
+                <span class="step-pill">Django backend</span>
+                <span class="step-pill">Celery worker</span>
+                <span class="step-pill">Redis + Qdrant</span>
+                <span class="step-pill">Ollama LLM</span>
+                <span class="step-pill">Application UI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- System Requirements -->
+        <div class="content-section" id="sysreq">
+          <h3>System Requirements</h3>
+          <div class="req-grid">
+            <div class="req-card">
+              <div class="req-title">Minimum</div>
+              <div class="req-item">Windows 10 / 11</div>
+              <div class="req-item">16 GB RAM</div>
+              <div class="req-item">SSD storage</div>
+              <div class="req-item">Internet (initial setup only)</div>
+            </div>
+            <div class="req-card">
+              <div class="req-title">Recommended</div>
+              <div class="req-item">Windows 11</div>
+              <div class="req-item">32 GB RAM</div>
+              <div class="req-item">NVMe SSD</div>
+              <div class="req-item">Multi-core CPU</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="content-section" id="notes">
+          <h3>Notes</h3>
+          <div class="note-box">
+            <strong>First Launch</strong>
+            The initial setup may take several minutes &mdash; it downloads Llama 3, installs dependencies, and sets up Docker images. Subsequent launches are much faster.
+          </div>
+          <div class="note-box">
+            <strong>Performance</strong>
+            AI response speed depends on available RAM and CPU. 32 GB RAM is recommended for smooth inference.
+          </div>
+          <div class="note-box">
+            <strong>Offline After Setup</strong>
+            After initial setup, the full application runs offline &mdash; no internet required for normal use.
+          </div>
+        </div>
+
+        <!-- Troubleshooting -->
+        <div class="content-section" id="trouble">
+          <h3>Troubleshooting</h3>
+          <div class="trouble-table">
+            <div class="trouble-row">
+              <div class="trouble-q">Docker connection issues</div>
+              <div class="trouble-a">Ensure Docker Desktop is running before launching. Check the system tray icon to verify it is active.</div>
+            </div>
+            <div class="trouble-row">
+              <div class="trouble-q">AI model not responding</div>
+              <div class="trouble-a">Verify Ollama is installed correctly. Run <span class="inline-code">ollama run llama3</span> in a terminal to test it.</div>
+            </div>
+            <div class="trouble-row">
+              <div class="trouble-q">Slow AI responses</div>
+              <div class="trouble-a">Close other applications to free memory. Local LLM inference is CPU and RAM intensive &mdash; 32 GB is recommended.</div>
+            </div>
+            <div class="trouble-row">
+              <div class="trouble-q">setup.bat fails</div>
+              <div class="trouble-a">Ensure Python is on your system PATH. Run <span class="inline-code">python --version</span> to verify. Try running as Administrator.</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /main content -->
+    </div><!-- /install-layout -->
+  </div><!-- /container -->
+
+  <footer>
+    <div class="footer-brand">EnterpriseAI &mdash; private-ai-assistant</div>
+    <div class="footer-tagline"><span>Private Enterprise Intelligence.</span> Built for Secure Knowledge Access.</div>
+  </footer>
+
+</div><!-- /page-wrap -->
+
+<script src="./script.js"></script>
+</body>
+</html>

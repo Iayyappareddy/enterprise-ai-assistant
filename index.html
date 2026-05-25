@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Enterprise Private AI Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">
+    <span class="nav-brand-dot"></span>
+    EnterpriseAI
+  </a>
+  <div class="nav-links">
+    <a class="nav-btn active" href="index.html">Home</a>
+    <a class="nav-btn"        href="installation.html">Installation</a>
+    <a class="nav-btn"        href="about.html">About</a>
+    <button class="nav-download" onclick="triggerDownload()">&#8595; Download .exe</button>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+
+        <div>
+          <div class="eyebrow">Enterprise Private AI</div>
+          <h1>Your Company Knowledge.<br/><span>Your Privacy.</span></h1>
+          <p class="hero-desc">
+            A privacy-first AI knowledge assistant for secure document intelligence using local LLMs, vector search, and role-based access control. No sensitive data ever leaves your infrastructure.
+          </p>
+          <div class="hero-btns">
+            <button class="btn btn-primary" onclick="triggerDownload()">&#8595; Download Application</button>
+            <a class="btn btn-outline" href="installation.html">Installation Guide &rarr;</a>
+            <a class="btn btn-outline" href="about.html">About Project</a>
+          </div>
+
+          <div class="hero-stats">
+            <div><div class="hero-stat-n">100%</div><div class="hero-stat-l">Local AI inference</div></div>
+            <div><div class="hero-stat-n">0</div><div class="hero-stat-l">Cloud API calls</div></div>
+            <div><div class="hero-stat-n">RAG</div><div class="hero-stat-l">Vector retrieval</div></div>
+            <div><div class="hero-stat-n">RBAC</div><div class="hero-stat-l">Role-based access</div></div>
+          </div>
+
+          <div class="demo-card">
+            <div class="demo-badge">
+              <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1" fill="var(--green)" stroke="none"/></svg>
+              Superuser<br/>Demo
+            </div>
+            <div class="demo-fields">
+              <div class="demo-row">
+                <span class="demo-label">Email</span>
+                <span class="demo-value" id="demo-email">demo@enterpriseai.com</span>
+                <button class="demo-copy" onclick="copyDemo('demo-email', this)" title="Copy">&#10021;</button>
+              </div>
+              <div class="demo-row">
+                <span class="demo-label">Password</span>
+                <span class="demo-value" id="demo-pass">Demo@123</span>
+                <button class="demo-copy" onclick="copyDemo('demo-pass', this)" title="Copy">&#10021;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-terminal">
+          <div class="term-top">
+            <span class="term-circle" style="background:#ff5f57"></span>
+            <span class="term-circle" style="background:#febc2e"></span>
+            <span class="term-circle" style="background:#28c840"></span>
+            <span style="font-family:'Fira Code',monospace;font-size:11px;color:var(--text3);margin-left:auto;">EnterpriseAI</span>
+          </div>
+          <div class="term-body">
+            <span class="t-line t-dim"># Starting services...</span>
+            <span class="t-line t-ok">&#10003; Django backend &mdash; running</span>
+            <span class="t-line t-ok">&#10003; Qdrant vector DB &mdash; running</span>
+            <span class="t-line t-ok">&#10003; Redis + Celery &mdash; running</span>
+            <span class="t-line t-ok">&#10003; Ollama (Llama 3) &mdash; loaded</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-dim">&gt; Query: "What is our leave policy?"</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-ok">&rarr; Searching: HR_policy_2024.pdf</span>
+            <span class="t-line t-ok">&rarr; Retrieved 3 relevant chunks</span>
+            <span class="t-line t-ok">&rarr; LLM inference: local only</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line" style="color:var(--text)">Response: Employees are entitled</span>
+            <span class="t-line" style="color:var(--text)">to 18 days of annual leave...</span>
+            <span class="t-line">&nbsp;</span>
+            <span class="t-line t-dim">$ <span class="t-cursor"></span></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="two-col">
+
+        <div class="fade">
+          <div class="eyebrow">The Problem</div>
+          <h2 class="title">Sensitive Data Leaves Your Walls</h2>
+          <p class="subtitle">Modern AI tools are powerful, but sensitive organizational data often leaves your infrastructure and gets processed by third-party cloud providers.</p>
+          <div class="list-block">
+            <div class="list-item"><span class="list-item-icon">&#9888;</span> HR policies sent to external AI APIs</div>
+            <div class="list-item"><span class="list-item-icon">&#9888;</span> Finance reports processed in the cloud</div>
+            <div class="list-item"><span class="list-item-icon">&#9888;</span> Legal contracts leaving your environment</div>
+            <div class="list-item"><span class="list-item-icon">&#9888;</span> Confidential SOPs exposed to third parties</div>
+            <div class="list-item"><span class="list-item-icon">&#9888;</span> Employee records at compliance risk</div>
+          </div>
+        </div>
+
+        <div class="fade">
+          <div class="eyebrow">The Solution</div>
+          <h2 class="title">Fully Local AI Pipeline</h2>
+          <p class="subtitle">Every step runs locally inside your own environment &mdash; zero cloud exposure.</p>
+          <div class="pipeline">
+            <div class="pipe-row">
+              <span class="pipe-n">01</span>
+              <div><div class="pipe-name">Document Ingestion</div><div class="pipe-sub">PDF &middot; DOCX &middot; TXT &middot; CSV</div></div>
+              <span class="pipe-tag">INPUT</span>
+            </div>
+            <div class="pipe-arrow">&#8595;</div>
+            <div class="pipe-row">
+              <span class="pipe-n">02</span>
+              <div><div class="pipe-name">Semantic Indexing</div><div class="pipe-sub">Sentence Transformers</div></div>
+              <span class="pipe-tag">EMBED</span>
+            </div>
+            <div class="pipe-arrow">&#8595;</div>
+            <div class="pipe-row">
+              <span class="pipe-n">03</span>
+              <div><div class="pipe-name">Vector Retrieval</div><div class="pipe-sub">Qdrant vector database</div></div>
+              <span class="pipe-tag">SEARCH</span>
+            </div>
+            <div class="pipe-arrow">&#8595;</div>
+            <div class="pipe-row">
+              <span class="pipe-n">04</span>
+              <div><div class="pipe-name">LLM Inference</div><div class="pipe-sub">Ollama &mdash; runs locally</div></div>
+              <span class="pipe-tag">INFER</span>
+            </div>
+            <div class="pipe-arrow">&#8595;</div>
+            <div class="pipe-row last">
+              <span class="pipe-n">&#10003;</span>
+              <div><div class="pipe-name">Private AI Response</div><div class="pipe-sub">Zero cloud transmissions</div></div>
+              <span class="pipe-tag">SECURE</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="fade">
+        <div class="eyebrow">Core Features</div>
+        <h2 class="title">Everything You Need, Locally</h2>
+      </div>
+      <div class="card-grid fade">
+        <div class="card"><div class="feat-icon">LOCAL_LLM</div><div class="feat-title">Private Local AI Inference</div><div class="feat-body">Run large language models via Ollama. Enterprise data never leaves the machine.</div></div>
+        <div class="card"><div class="feat-icon">DOC_QA</div><div class="feat-title">Intelligent Document Q&amp;A</div><div class="feat-body">Upload internal documents and query them conversationally in natural language.</div></div>
+        <div class="card"><div class="feat-icon">RAG</div><div class="feat-title">Retrieval-Augmented Generation</div><div class="feat-body">Semantic retrieval combined with LLM reasoning for accurate, grounded responses.</div></div>
+        <div class="card"><div class="feat-icon">RBAC</div><div class="feat-title">Role-Based Access Control</div><div class="feat-body">Users only access documents they are permitted to see, enforced at the retrieval layer.</div></div>
+        <div class="card"><div class="feat-icon">MULTI_T</div><div class="feat-title">Multi-Tenant Architecture</div><div class="feat-body">Enterprise isolation &mdash; organizational boundaries remain protected across departments.</div></div>
+        <div class="card"><div class="feat-icon">SOURCES</div><div class="feat-title">Source Citations</div><div class="feat-body">Every response includes source references so you know exactly what grounded the answer.</div></div>
+        <div class="card"><div class="feat-icon">INGEST</div><div class="feat-title">Document Processing Pipeline</div><div class="feat-body">Supports PDF, DOCX, TXT, and CSV &mdash; covering the full range of enterprise formats.</div></div>
+        <div class="card"><div class="feat-icon">ASYNC</div><div class="feat-title">Background Processing</div><div class="feat-body">Asynchronous document indexing via Celery and Redis for non-blocking ingestion.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="two-col">
+        <div class="fade">
+          <div class="eyebrow">System Architecture</div>
+          <h2 class="title">Built on a Solid Stack</h2>
+          <p class="subtitle">Enterprise backend engineering combined with modern AI retrieval systems &mdash; a complete local stack for reliability and security.</p>
+        </div>
+        <div class="fade">
+          <div class="arch-flow">
+            <div class="arch-node accent"><span class="arch-label">Entry Point</span>EnterpriseAI.exe</div>
+            <div class="arch-line"></div>
+            <div class="arch-node"><span class="arch-label">Web Framework</span>Django Backend</div>
+            <div class="arch-line"></div>
+            <div class="arch-node"><span class="arch-label">API Layer</span>Django REST Framework</div>
+            <div class="arch-line"></div>
+            <div class="arch-node"><span class="arch-label">Task Queue</span>Celery + Redis</div>
+            <div class="arch-line"></div>
+            <div class="arch-node"><span class="arch-label">Vector Store</span>Qdrant Vector Database</div>
+            <div class="arch-line"></div>
+            <div class="arch-node"><span class="arch-label">Retrieval Layer</span>LlamaIndex</div>
+            <div class="arch-line"></div>
+            <div class="arch-node"><span class="arch-label">LLM Runtime</span>Ollama (Llama 3)</div>
+            <div class="arch-line"></div>
+            <div class="arch-node result"><span class="arch-label" style="color:var(--text3)">Output</span>Private AI Response</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container fade">
+      <div class="eyebrow">Technology Stack</div>
+      <h2 class="title">The Stack</h2>
+      <div class="stack-grid">
+        <div class="stack-card"><div class="stack-cat">Backend</div><div class="stack-item">Django</div><div class="stack-item">Django REST Framework</div><div class="stack-item">Simple JWT Auth</div></div>
+        <div class="stack-card"><div class="stack-cat">AI / Retrieval</div><div class="stack-item">Ollama</div><div class="stack-item">Llama 3</div><div class="stack-item">LlamaIndex</div><div class="stack-item">Qdrant Vector DB</div><div class="stack-item">Sentence Transformers</div></div>
+        <div class="stack-card"><div class="stack-cat">Processing</div><div class="stack-item">Celery</div><div class="stack-item">Redis</div></div>
+        <div class="stack-card"><div class="stack-cat">Frontend</div><div class="stack-item">HTML / CSS / JS</div><div class="stack-item">Django Templates</div></div>
+        <div class="stack-card"><div class="stack-cat">Packaging</div><div class="stack-item">Windows EXE Launcher</div><div class="stack-item">setup.bat</div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-section">
+    <div class="container">
+      <h2>Ready to Deploy Privately?</h2>
+      <p>AI-powered document intelligence, entirely within your infrastructure. No cloud. No compromise.</p>
+      <button class="btn btn-primary" style="font-size:15px;padding:0.75rem 2rem;margin:0 auto;" onclick="triggerDownload()">&#8595; Download EnterpriseAI.exe</button>
+      <div class="cta-meta">Windows 10 / 11 &nbsp;&middot;&nbsp; Requires: Python, Docker Desktop, Ollama &nbsp;&middot;&nbsp; 16 GB RAM min.</div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-brand">EnterpriseAI &mdash; private-ai-assistant</div>
+    <div class="footer-tagline"><span>Private Enterprise Intelligence.</span> Built for Secure Knowledge Access.</div>
+  </footer>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>

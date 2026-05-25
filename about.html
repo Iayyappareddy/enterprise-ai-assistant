@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Enterprise Private AI Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     NAVBAR
+══════════════════════════════════════════ -->
+<nav>
+  <a class="nav-brand" href="index.html">
+    <span class="nav-brand-dot"></span>
+    EnterpriseAI
+  </a>
+  <div class="nav-links">
+    <a class="nav-btn"        href="index.html">Home</a>
+    <a class="nav-btn"        href="installation.html">Installation</a>
+    <a class="nav-btn active" href="about.html">About</a>
+    <button class="nav-download" onclick="triggerDownload()">&#8595; Download .exe</button>
+  </div>
+</nav>
+
+<div class="page-wrap">
+
+  <!-- ── PAGE HERO ─────────────────────────── -->
+  <div class="page-hero">
+    <div class="container">
+      <div class="eyebrow">The Project</div>
+      <h1>About This Project</h1>
+    </div>
+  </div>
+
+  <!-- ── CONTENT ───────────────────────────── -->
+  <div class="container">
+    <div class="about-layout">
+
+      <!-- Main -->
+      <div>
+
+        <div class="about-section">
+          <h3>Project Description</h3>
+          <p class="about-text">Enterprise Private AI Assistant is a privacy-first enterprise knowledge intelligence platform &mdash; providing secure, document-based AI assistance without relying on external cloud AI services.</p>
+          <p class="about-text">This project was built to address a real architectural challenge:</p>
+          <div class="highlight-box">"How can organizations leverage AI-powered document intelligence while maintaining complete control over sensitive internal data?"</div>
+          <p class="about-text">The answer is a fully self-contained system where every component &mdash; from vector storage to language model inference &mdash; runs inside the organization's own infrastructure.</p>
+        </div>
+
+        <div class="about-section">
+          <h3>Design Philosophy</h3>
+          <div class="principles-grid">
+            <div class="p-card">
+              <div class="p-title">Privacy First</div>
+              <div class="p-body">No enterprise knowledge is transmitted to third-party AI providers. Inference always runs locally.</div>
+            </div>
+            <div class="p-card">
+              <div class="p-title">Secure Retrieval</div>
+              <div class="p-body">Access to knowledge is governed through role-based authorization at the retrieval layer.</div>
+            </div>
+            <div class="p-card">
+              <div class="p-title">Explainable Responses</div>
+              <div class="p-body">Every response includes source citations for full transparency and auditability.</div>
+            </div>
+            <div class="p-card">
+              <div class="p-title">Practical Architecture</div>
+              <div class="p-body">Combines proven backend patterns with modern retrieval-augmented AI &mdash; built for real production use.</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /main -->
+
+      <!-- Sidebar -->
+      <div>
+
+        <!-- Tech Stack -->
+        <div class="about-sidebar-card">
+          <div class="sidebar-title">Tech Stack</div>
+          <div>
+            <span class="badge">Django</span><span class="badge">DRF</span>
+            <span class="badge">Ollama</span><span class="badge">Llama 3</span>
+            <span class="badge">LlamaIndex</span><span class="badge">Qdrant</span>
+            <span class="badge">Celery</span><span class="badge">Redis</span>
+            <span class="badge">JWT</span><span class="badge">RBAC</span>
+            <span class="badge">RAG</span><span class="badge">Python</span>
+            <span class="badge">Docker</span>
+          </div>
+        </div>
+
+        <!-- Supported Documents -->
+        <div class="about-sidebar-card">
+          <div class="sidebar-title">Supported Documents</div>
+          <div>
+            <span class="badge green">PDF</span>
+            <span class="badge green">DOCX</span>
+            <span class="badge green">TXT</span>
+            <span class="badge green">CSV</span>
+          </div>
+        </div>
+
+        <!-- Demo Login Credentials -->
+        <div class="demo-sidebar-card">
+          <div class="sidebar-title">Demo Login &mdash; Superuser</div>
+          <div class="demo-field-group">
+            <div class="demo-field">
+              <span class="demo-field-label">Email</span>
+              <div class="demo-field-row">
+                <span class="demo-field-val" id="ab-email">demo@enterpriseai.com</span>
+                <button class="demo-copy" onclick="copyDemo('ab-email', this)" title="Copy">&#10021;</button>
+              </div>
+            </div>
+            <div class="demo-field">
+              <span class="demo-field-label">Password</span>
+              <div class="demo-field-row">
+                <span class="demo-field-val" id="ab-pass">Demo@123</span>
+                <button class="demo-copy" onclick="copyDemo('ab-pass', this)" title="Copy">&#10021;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Use Cases -->
+        <div class="about-sidebar-card">
+          <div class="sidebar-title">Real-World Use Cases</div>
+          <div class="use-case-item">Internal HR policy assistant</div>
+          <div class="use-case-item">Finance document intelligence</div>
+          <div class="use-case-item">Legal knowledge retrieval</div>
+          <div class="use-case-item">Operations SOP assistants</div>
+          <div class="use-case-item">Secure enterprise knowledge search</div>
+        </div>
+
+        <button class="btn btn-primary"  style="width:100%;justify-content:center;margin-bottom:0.5rem;" onclick="triggerDownload()">&#8595; Download Application</button>
+        <a      class="btn btn-outline"  style="width:100%;justify-content:center;" href="installation.html">Installation Guide &rarr;</a>
+
+      </div><!-- /sidebar -->
+
+    </div><!-- /about-layout -->
+  </div><!-- /container -->
+
+  <!-- ══════════════════════════════════════════
+       DEVELOPER CREDITS
+  ══════════════════════════════════════════ -->
+  <div class="credits-section">
+    <div class="container">
+
+      <div class="eyebrow">Credits</div>
+      <h2>Developed by</h2>
+      <p>Designer, Architect &amp; Engineer of this project</p>
+
+      <!-- Name card -->
+      <div class="dev-card">
+        <div class="dev-avatar">A</div>
+        <div class="dev-name">Ayyappa Reddy I</div>
+        <div class="dev-role">Full-Stack &amp; AI Systems Developer</div>
+      </div>
+
+      <!-- Social links -->
+      <div class="social-links">
+
+        <!-- Email -->
+        <a class="social-btn"
+           href="mailto:iragamreddyayyappareddy72@gmail.com"
+           title="iragamreddyayyappareddy72@gmail.com"
+           style="border-color:var(--border);"
+           onmouseover="this.style.borderColor='var(--accent)';this.style.background='rgba(79,142,247,0.06)'"
+           onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--bg2)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="4" width="20" height="16" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+          <span>Email</span>
+        </a>
+
+        <!-- LinkedIn -->
+        <a class="social-btn"
+           href="https://www.linkedin.com/in/ayyappa-reddy-i-31696a343/"
+           target="_blank"
+           title="LinkedIn"
+           style="border-color:var(--border);"
+           onmouseover="this.style.borderColor='#0a66c2';this.style.background='rgba(10,102,194,0.07)'"
+           onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--bg2)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a66c2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          <span>LinkedIn</span>
+        </a>
+
+        <!-- GitHub -->
+        <a class="social-btn"
+           href="https://github.com/Iayyappareddy"
+           target="_blank"
+           title="GitHub"
+           style="border-color:var(--border);"
+           onmouseover="this.style.borderColor='var(--text2)';this.style.background='rgba(148,163,184,0.06)'"
+           onmouseout="this.style.borderColor='var(--border)';this.style.background='var(--bg2)'">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--text)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.2c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
+            <path d="M9 18c-4.51 2-5-2-7-2"/>
+          </svg>
+          <span>GitHub</span>
+        </a>
+
+        <!-- Portfolio (coming soon) -->
+        <div class="social-btn disabled" title="Portfolio coming soon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--text3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2"/>
+            <path d="M8 21h8M12 17v4"/>
+          </svg>
+          <span>Portfolio</span>
+          <span class="soon-badge">soon</span>
+        </div>
+
+      </div><!-- /social-links -->
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-brand">EnterpriseAI &mdash; private-ai-assistant</div>
+    <div class="footer-tagline"><span>Private Enterprise Intelligence.</span> Built for Secure Knowledge Access.</div>
+  </footer>
+
+</div><!-- /page-wrap -->
+
+<script src="script.js"></script>
+</body>
+</html>
