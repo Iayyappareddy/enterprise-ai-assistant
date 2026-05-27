@@ -1,5 +1,5 @@
 
-var DOWNLOAD_URL = 'https://github.com/Iayyappareddy/enterprise-ai-assistant/releases/download/v1.0/EnterpriceAI.zip';
+var DOWNLOAD_URL = 'https://github.com/Iayyappareddy/enterprise-ai-assistant/releases/download/v2.0/EnterpriceAI.2.0.zip';
 
 
 function triggerDownload() {
